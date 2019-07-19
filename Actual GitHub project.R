@@ -1,2 +1,6 @@
 library(dplyr)
-filter(mtcars, mpg<21, cyl<=6)
+filter(mtcars, cyl <= 6) %>% 
+  group_by(cyl) %>% 
+  summarise(count = n())
+
+            
